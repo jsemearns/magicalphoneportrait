@@ -1,6 +1,6 @@
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.views.generic import TemplateView, View
 from django.http import HttpResponse
@@ -29,4 +29,5 @@ class MessageFacebookUser(View):
 
 		if image is not None:
 			os.system('{} {}'.format(base_cmd, username))
-		return reverse('home')
+
+		return redirect(reverse('home'))
