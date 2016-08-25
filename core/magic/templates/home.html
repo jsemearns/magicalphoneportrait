@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magical Phone Portrait</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+    <div>
+        <img id="portrait-img" src="/static/images/default.jpg">
+    </div>
+
+    <a class="add-button btn-floating btn-large waves-effect waves-light red lighten-2">
+        <i class="material-icons">add</i>
+    </a>
+    <form class="hidden">
+        <input type="file" name="picture" accept="image/*" />
+        <input type="submit" />
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    background-color: #f5f5f5;
+}
+
+#portrait-img {
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.add-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
