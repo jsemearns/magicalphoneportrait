@@ -39,7 +39,7 @@ form.on('submit', function(e) {
         beforeSend: function(xhr, settings) {
             xhr.setRequestHeader('X-CSRFToken', csrftoken);
         },
-        method: 'POST',
+        type: 'POST',
         url: $this.action,
         data: { 'image': formImage.val() },
         success: function() {
