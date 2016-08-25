@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title>Magical Phone Portrait</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<form action="/message/" method="POST">
-	{% csrf_token %}
-		<input type="file" id="image" name="image" />
-		<input type="submit" />
-	</form>
+
+    <div class="image-container">
+        <a class="add-button btn-floating btn-small waves-effect waves-light red lighten-2">
+            <i class="material-icons">mode_edit</i>
+        </a>
+        <div id="portrait-img" style="background-image: url('/static/images/default.jpg')">
+    </div>
+
+    <form action="/message/" method="POST" class="hidden">
+    {% csrf_token %}
+        <input type="file" id="image" name="image" />
+        <input type="submit" />
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+
 </body>
 </html>

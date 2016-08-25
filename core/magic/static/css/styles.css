@@ -1,0 +1,29 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.image-container {
+    top: 40px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+#portrait-img {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    background-size: cover;
+    background-position: 50% 50%; 
+}
+
+.hidden {
+    display: none;
+}
+
+.add-button {
+    position: relative;
+    top: 20px;
+    right: -123px;
+}
