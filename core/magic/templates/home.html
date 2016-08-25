@@ -9,13 +9,13 @@
 </head>
 <body>
 
-    <div>
-        <img id="portrait-img" src="/static/images/default.jpg">
+    <div class="image-container">
+        <a class="add-button btn-floating btn-small waves-effect waves-light red lighten-2">
+            <i class="material-icons">mode_edit</i>
+        </a>
+        <div id="portrait-img" style="background-image: url('/static/images/default.jpg')">
     </div>
 
-    <a class="add-button btn-floating btn-large waves-effect waves-light red lighten-2">
-        <i class="material-icons">add</i>
-    </a>
     <form class="hidden">
         <input type="file" name="picture" accept="image/*" />
         <input type="submit" />
