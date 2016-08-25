@@ -10,6 +10,7 @@ import creds
 import json
 import requests
 import re
+from HTMLParser import HTMLParser
 
 
 class MessageFB(unittest.TestCase):
@@ -29,6 +30,8 @@ class MessageFB(unittest.TestCase):
         self.message = requests.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
         clean = re.compile('<.*?>')
         self.message = re.sub(clean, '', json.loads(self.message.text, encoding='utf-8')[0]['content'])
+        parser = HTMLParser()
+        self.message = parser.unescape(self.message)
 
     def tearDown(self):
         self.driver.close()
