@@ -10,6 +10,7 @@ import creds
 
 class MessageFB(unittest.TestCase):
     username = None
+    message = None
 
     def setUp(self):
         chrome_opt = webdriver.ChromeOptions()
@@ -40,7 +41,7 @@ class MessageFB(unittest.TestCase):
                 self.base_url, 'messages/' + str(self.username))
             driver.get(message_url)
             text_field = driver.find_element(By.XPATH, "//div//textarea[@role='textbox']")
-            text_field.send_keys('hello there')
+            text_field.send_keys(self.message)
             text_field.send_keys(Keys.ENTER)
         else:
             pass
@@ -49,4 +50,5 @@ class MessageFB(unittest.TestCase):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         MessageFB.username = sys.argv.pop()
+        MessageFB.message = sys.argv.pop()
     unittest.main()
