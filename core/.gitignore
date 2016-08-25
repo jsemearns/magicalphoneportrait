@@ -2,3 +2,4 @@
 creds.txt
 db.sqlite3
 storage/
+creds.py
