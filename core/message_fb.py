@@ -7,6 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import creds
+import json
+import requests
+import re
 
 
 class MessageFB(unittest.TestCase):
@@ -23,6 +26,9 @@ class MessageFB(unittest.TestCase):
         self.driver = webdriver.PhantomJS(desired_capabilities=dcap)
         self.driver.implicitly_wait(10)
         self.base_url = 'https://www.facebook.com/'
+        self.message = requests.get('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
+        clean = re.compile('<.*?>')
+        self.message = re.sub(clean, '', json.loads(self.message.text, encoding='utf-8')[0]['content'])
 
     def tearDown(self):
         self.driver.close()
@@ -54,5 +60,4 @@ class MessageFB(unittest.TestCase):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         MessageFB.username = sys.argv.pop()
-        MessageFB.message = sys.argv.pop()
     unittest.main()
