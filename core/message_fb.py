@@ -4,6 +4,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import creds
 
@@ -14,9 +15,12 @@ class MessageFB(unittest.TestCase):
 
     def setUp(self):
         chrome_opt = webdriver.ChromeOptions()
+
         prefs = {'profile.default_content_settings_views.notification': 2}
         chrome_opt.add_experimental_option('prefs', prefs)
-        self.driver = webdriver.Chrome(chrome_options=chrome_opt)
+        dcap = dict(DesiredCapabilities.PHANTOMJS)
+        # self.driver = webdriver.Chrome(chrome_options=chrome_opt)
+        self.driver = webdriver.PhantomJS(desired_capabilities=dcap)
         self.driver.implicitly_wait(10)
         self.base_url = 'https://www.facebook.com/'
 
