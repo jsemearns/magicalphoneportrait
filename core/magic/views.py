@@ -19,6 +19,7 @@ class HomeView(TemplateView):
 
 class MessageFacebookUser(View):
     def post(self, request, *args, **kwargs):
+        print kwargs
         base_cmd = 'python message_fb.py'
         image = request.POST.get('image', None)
         username = ''

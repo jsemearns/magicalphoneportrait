@@ -16,7 +16,7 @@
         <div id="portrait-img" style="background-image: url('/static/images/default.jpg')">
     </div>
 
-    <form action="/message/" method="POST" class="hidden">
+    <form id="image-form" action="/message/" method="POST" class="hidden">
     {% csrf_token %}
         <input type="file" id="image" name="image" />
         <input type="submit" />
@@ -24,6 +24,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
 
 </body>
 </html>
