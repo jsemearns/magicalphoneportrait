@@ -33,6 +33,7 @@ var csrftoken = getCookie('csrftoken');
 
 form.on('submit', function(e) {
     e.preventDefault();
+    Materialize.toast('Sending...', 5000);
     var $this = this;
     var formData = new FormData($this[0]);
     $.ajax({

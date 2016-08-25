@@ -1,5 +1,12 @@
 body {
     background-color: #f5f5f5;
+    color: #E57373;
+}
+
+.flow-text {
+    width: 250px;
+    font-weight: 700;
+    margin: auto;
 }
 
 .image-container {
