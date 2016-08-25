@@ -41,6 +41,9 @@ form.on('submit', function(e) {
         },
         method: 'POST',
         url: $this.action,
-        data: {'image': formImage.val()}
+        data: { 'image': formImage.val() },
+        success: function() {
+            Materialize.toast('Message sent!', 5000);
+        }
     });
 });
