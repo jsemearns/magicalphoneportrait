@@ -24,8 +24,10 @@ class MessageFacebookUser(View):
         username = ''
         index = 0
 
-        filename = str(image).split('.')[0]
+        filename = str(image).split('\\')[-1].split('.')[0]
+        print filename
         if filename.isdigit():
+            print int(filename)
             if int(filename) < 6:
                 index = int(filename)
 
